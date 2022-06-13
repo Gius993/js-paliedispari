@@ -6,25 +6,42 @@
 // Dichiariamo chi ha vinto.
 
 //numero utente
-let pariDispari = prompt("scegli se pari o dispari")
-let numeroUnoCinque = parseInt(prompt("inserisci un numero da 1 a 5"))
 
+
+//funzioni
 // Generiamo un numero random
-const numberRandom = getRndInteger(1, 5);
 function getRndInteger(min, max) {
 	return Math.floor(Math.random() * (max - min)) + min;
-  }
-let numeroPC = numberRandom;
+}
+// paro o dispari
+function isEven(sum) {
+	//return sum % 2 == 0; 
+	if (sum % 2 == 0){
+		return 'pari';
+	}else {
+		return 'dispari'
+	}
+}
+//************ */
+
+let pariDispari = prompt("scegli se pari o dispari")
+console.log('Pari o Dispari:', pariDispari);
+let numeroUtente = parseInt(prompt("inserisci un numero da 1 a 5"))
+console.log('Numero utente:', numeroUtente );
+let numeroPC = getRndInteger(1, 5);
+console.log('Numero PC', numeroPC);
+
+
 
 // Sommiamo
-let sum = numeroPC +  numeroUnoCinque;
-console.log(sum);
-let sumEvent = false;
-// paro o dispari
-function risultato(sum) {
-  return sum % 2 == 0;
-}
-if( sum % 2 === 0) {
-	sumEvent === true;
-}
+let sum = numeroPC +  numeroUtente;
+console.log('Somme numeri:', sum);
 
+// pari risultato
+
+if (isEven(sum) === pariDispari){
+	alert('Hai vinto');
+	
+} else{
+	alert('Hai perso');
+}
